@@ -79,6 +79,7 @@ final class Per_Form_Confirmations_4_GIVEWP {
 		add_action( 'admin_init', array( $this, 'check_environment' ), 999 );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
 		add_action( 'admin_enqueue_scripts', array($this, 'load_admin_styles') );
+		add_action( 'admin_enqueue_scripts', array($this, 'load_admin_scripts') );
 	}
 
 
@@ -281,6 +282,25 @@ final class Per_Form_Confirmations_4_GIVEWP {
 	 */
 	public function load_admin_styles() {
         wp_enqueue_style( 'pfconfs4givewp', PER_FORM_CONFIRMATIONS_4_GIVEWP_URL . 'assets/pfconfs4givewp-admin.css', array(), PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION, 'all' );
+	}
+
+	/**
+	 * Setup hooks
+	 *
+	 * @since
+	 * @access private
+	 */
+	public function load_admin_scripts( $hook_suffix ) {
+		$cpt = 'give_forms';
+
+    	if( in_array($hook_suffix, array('post.php', 'post-new.php') ) ){
+        	$screen = get_current_screen();
+
+        	if( is_object( $screen ) && $cpt == $screen->post_type ){
+
+				wp_enqueue_script( 'pfconfs4givewp', PER_FORM_CONFIRMATIONS_4_GIVEWP_URL . 'assets/pfconfs4givewp.admin.js', array(), PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION, 'all' );
+			}
+		}
 	}
 
 }

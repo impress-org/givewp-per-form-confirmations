@@ -33,7 +33,7 @@ class PFCONFS4GiveWP_Form_Settings {
 				array(
 					'id'       => "{$this->id}_status",
 					'name'     => __( 'Enable', 'pfconfs-4-givewp' ),
-					'type'     => 'radio',
+					'type'     => 'radio_inline',
 					'desc'     => __( 'Set whether this form uses the global PayPal Standard email address or a custom beneficiary\'s email address ', 'pfconfs-4-givewp' ),
 					'options' => array( 
                         'global' => __('Global', 'pfconfs-4-givewp'),
@@ -47,6 +47,23 @@ class PFCONFS4GiveWP_Form_Settings {
 					'type'     => 'give_custom_pages_output',
 					'callback' => array($this, 'give_custom_pages_output'),
 					'desc'     => __( 'Chose the Page your Confirmation message is on.', 'pfconfs-4-givewp' ),
+				),
+				array(
+					'id'       => "{$this->id}_message_location",
+					'name'     => __( 'Message Location', 'pfconfs-4-givewp' ),
+					'type'     => 'radio_inline',
+					'desc'     => __( 'Set the position of the custom messaging or disable it completely.', 'pfconfs-4-givewp' ),
+					'options' => array( 
+						'disabled' => __('Disabled', 'pfconfs-4-givewp'),
+                        'above' => __('Above', 'pfconfs-4-givewp'),
+                        'below' => __('Below', 'pfconfs-4-givewp'),
+                     ),
+                     'default' => 'disabled',
+				),
+				array(
+					'id'       => "{$this->id}_confirmation_message",
+					'name'     => __( 'Message', 'pfconfs-4-givewp' ),
+					'type'     => 'wysiwyg',
 				),
 			),
 		);
