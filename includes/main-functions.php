@@ -47,7 +47,7 @@ function pfconfs4givewp_output_sharing_above() {
     $message = $args['form_meta']['pfconfs4givewp-fields_confirmation_message'][0];
 
     if ( $position =='above' ) {
-        echo esc_html( $message );
+        echo $message;
     }
 }
 
@@ -63,6 +63,6 @@ function pfconfs4givewp_output_sharing_below() {
     $message = $args['form_meta']['pfconfs4givewp-fields_confirmation_message'][0];
 
     if ( $position=='below' ) {
-        echo esc_html( $message );
+        echo $message;
     }
 }
