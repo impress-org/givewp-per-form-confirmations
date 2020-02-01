@@ -152,7 +152,7 @@ final class Per_Form_Confirmations_4_GIVEWP {
 	 */
 	public function init( $give ) {
 
-		load_plugin_textdomain( 'sss-4-givewp', false, dirname( PER_FORM_CONFIRMATIONS_4_GIVEWP_BASENAME ) . '/languages' );
+		load_plugin_textdomain( 'pfconfs-4-givewp', false, dirname( PER_FORM_CONFIRMATIONS_4_GIVEWP_BASENAME ) . '/languages' );
 
 		// Don't hook anything else in the plugin if we're in an incompatible environment.
 		if ( ! $this->get_environment_warning() ) {
@@ -216,7 +216,7 @@ final class Per_Form_Confirmations_4_GIVEWP {
 		) {
 			/* Min. Give. plugin version. */
 			// Show admin notice.
-			$this->add_admin_notice( 'prompt_give_incompatible', 'error', sprintf( __( '<strong>Activation Error:</strong> You must have the <a href="%s" target="_blank">GiveWP</a> core version %s for the Per-Form PayPal Standard for GiveWP add-on to activate.', 'sss-4-givewp' ), 'https://givewp.com', PER_FORM_CONFIRMATIONS_4_GIVEWP_MIN_GIVE_VERSION ) );
+			$this->add_admin_notice( 'prompt_give_incompatible', 'error', sprintf( __( '<strong>Activation Error:</strong> You must have the <a href="%s" target="_blank">GiveWP</a> core version %s for the Per-Form PayPal Standard for GiveWP add-on to activate.', 'pfconfs-4-givewp' ), 'https://givewp.com', PER_FORM_CONFIRMATIONS_4_GIVEWP_MIN_GIVE_VERSION ) );
 			$is_working = false;
 		}
 

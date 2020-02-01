@@ -46,7 +46,7 @@ class PFCONFS4GiveWP_Form_Settings {
 					'name'     => __( 'Page', 'pfconfs-4-givewp' ),
 					'type'     => 'give_custom_pages_output',
 					'callback' => array($this, 'give_custom_pages_output'),
-					'desc'     => __( 'Chose the Page your Confirmation message is on.', 'pfconfs-4-givewp' ),
+					'desc'     => __( 'Choose the Page your Confirmation message is on.', 'pfconfs-4-givewp' ),
 				),
 				array(
 					'id'       => "{$this->id}_message_location",
