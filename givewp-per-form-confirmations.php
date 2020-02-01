@@ -138,6 +138,24 @@ final class Per_Form_Confirmations_4_GIVEWP {
 		if ( ! self::$instance->check_environment() ) {
 			return;
 		}
+
+		/**
+		 * Set Trigger Date.
+		 *
+		 * @since  1.0.0
+		 */
+	
+		// Number of days you want the notice delayed by.
+		$delayindays = 15;
+
+		// Create timestamp for when plugin was activated.
+		$triggerdate = mktime( 0, 0, 0, date('m')  , date('d') + $delayindays, date('Y') );
+
+		// If our option doesn't exist already, we'll create it with today's timestamp.
+		if ( ! get_option( 'pfconfs_4_givewp_activation_date' ) ) {
+			add_option( 'pfconfs_4_givewp_activation_date', $triggerdate, '', 'yes' );
+		}
+		
 	}
 
 	/**
@@ -152,15 +170,40 @@ final class Per_Form_Confirmations_4_GIVEWP {
 	 */
 	public function init( $give ) {
 
-		load_plugin_textdomain( 'pfconfs-4-givewp', false, dirname( PER_FORM_CONFIRMATIONS_4_GIVEWP_BASENAME ) . '/languages' );
-
 		// Don't hook anything else in the plugin if we're in an incompatible environment.
 		if ( ! $this->get_environment_warning() ) {
 			return;
 		}
 
 		self::$instance->load_files();
+
+		// Set up localization.
+		$this->load_textdomain();
 	}
+
+	/**
+		 * Loads the plugin language files.
+		 *
+		 * @since  1.0
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function load_textdomain() {
+
+			// Set filter for Give's languages directory
+			$give_lang_dir = dirname( plugin_basename( PER_FORM_CONFIRMATIONS_4_GIVEWP_FILE ) ) . '/languages/';
+			$give_lang_dir = apply_filters( 'pfconfs4givewp_languages_directory', $give_lang_dir );
+
+			// Traditional WordPress plugin locale filter.
+			$locale = is_admin() && function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
+			$locale = apply_filters( 'plugin_locale', $locale, 'pfconfs-4-givewp' );
+
+			unload_textdomain( 'pfconfs-4-givewp' );
+			load_textdomain( 'pfconfs-4-givewp', WP_LANG_DIR . '/givewp-per-form-confirmations/' . $locale . '.mo' );
+			load_plugin_textdomain( 'pfconfs-4-givewp', false, $give_lang_dir );
+
+		}
 
 
 	/**
@@ -271,6 +314,7 @@ final class Per_Form_Confirmations_4_GIVEWP {
 	private function load_files() {
 		require_once PER_FORM_CONFIRMATIONS_4_GIVEWP_DIR . 'includes/main-functions.php';
 		require_once PER_FORM_CONFIRMATIONS_4_GIVEWP_DIR . 'includes/admin/form-settings.php';
+		require_once PER_FORM_CONFIRMATIONS_4_GIVEWP_DIR . 'includes/admin/notice.php';
 	}
 
 

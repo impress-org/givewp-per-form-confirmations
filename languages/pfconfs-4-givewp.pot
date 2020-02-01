@@ -1,0 +1,112 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Per-Form Confirmation Pages for GiveWP\n"
+"POT-Creation-Date: 2020-01-31 17:22-0800\n"
+"PO-Revision-Date: 2020-01-31 17:20-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: givewp-per-form-confirmations.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: givewp-per-form-confirmations.php:188
+#, php-format
+msgid ""
+"<strong>Activation Error:</strong> You must have the <a href=\"%s\" target="
+"\"_blank\">GiveWP</a> plugin installed and activated for Per-Form PayPal "
+"Standard for GiveWP to activate."
+msgstr ""
+
+#: givewp-per-form-confirmations.php:219
+#, php-format
+msgid ""
+"<strong>Activation Error:</strong> You must have the <a href=\"%s\" target="
+"\"_blank\">GiveWP</a> core version %s for the Per-Form PayPal Standard for "
+"GiveWP add-on to activate."
+msgstr ""
+
+#: includes/admin/form-settings.php:30
+msgid "Confirmation"
+msgstr ""
+
+#: includes/admin/form-settings.php:35
+msgid "Enable"
+msgstr ""
+
+#: includes/admin/form-settings.php:37
+msgid ""
+"Set whether this form uses the global PayPal Standard email address or a "
+"custom beneficiary's email address "
+msgstr ""
+
+#: includes/admin/form-settings.php:39
+msgid "Global"
+msgstr ""
+
+#: includes/admin/form-settings.php:40
+msgid "Customize"
+msgstr ""
+
+#: includes/admin/form-settings.php:46
+msgid "Page"
+msgstr ""
+
+#: includes/admin/form-settings.php:49
+msgid "Choose the Page your Confirmation message is on."
+msgstr ""
+
+#: includes/admin/form-settings.php:53
+msgid "Message Location"
+msgstr ""
+
+#: includes/admin/form-settings.php:55
+msgid "Set the position of the custom messaging or disable it completely."
+msgstr ""
+
+#: includes/admin/form-settings.php:57
+msgid "Disabled"
+msgstr ""
+
+#: includes/admin/form-settings.php:58
+msgid "Above"
+msgstr ""
+
+#: includes/admin/form-settings.php:59
+msgid "Below"
+msgstr ""
+
+#: includes/admin/form-settings.php:65
+msgid "Message"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Per-Form Confirmation Pages for GiveWP"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/impress-org/givewp-per-form-confirmations"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Set a unique donation confirmation page per-form for GiveWP"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "GiveWP"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://givewp.com"
+msgstr ""

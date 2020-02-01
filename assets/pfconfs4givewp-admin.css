@@ -3,3 +3,26 @@
     padding: 1rem;
     max-width: 400px;
 }
+
+p.pfc4givewp-review {
+    position: relative;
+    padding: 2px 0 3px 38px;
+    
+}
+p.pfc4givewp-review i.dashicons-heart {
+    color: white;
+    background: #66BB6A;
+    position: absolute;
+    left: -15px;
+    padding: 10px 9px;
+    top: -7px;
+}
+
+p.pfc4givewp-review strong {
+    color: #66BB6A;
+}
+p.pfc4givewp-review a.dismiss {
+    float: right;
+    text-decoration: none;
+    color: #66BB6A;
+}
