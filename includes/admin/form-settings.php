@@ -88,7 +88,7 @@ class PFCONFS4GiveWP_Form_Settings {
 
 		$pagesquery = $this->give_find_give_receipt_pages();
 
-		$pages = $pagesquery->posts;
+		$pages = $pagesquery;
 
 		//var_dump($pages);
 
@@ -99,13 +99,14 @@ class PFCONFS4GiveWP_Form_Settings {
 		</label>
 		<select
 				class="give-select-chosen give-chosen-settings"
-				style="<?php echo esc_attr( $field['style'] ); ?>"
-				name="<?php echo esc_attr( give_get_field_name( $field ) ); ?>[]"
+				name="<?php echo esc_attr( give_get_field_name( $field ) ); ?>"
 				id="<?php echo esc_attr( $field['id'] ); ?>"
 		>
 			<?php
-			foreach ( $pages as $page ) { ?>
-				<option value="<?php echo $page->guid; ?>">
+			foreach ( $pages as $page ) { 
+				$selected = ($field['value'] == $page->guid) ? 'selected' : '';
+				?>
+				<option <?php echo $selected; ?> value="<?php echo $page->guid; ?>">
 					<?php echo $page->post_title;?>
 				</option><?php } ?>
 			?>
@@ -119,18 +120,31 @@ class PFCONFS4GiveWP_Form_Settings {
 	}
 
 	public function give_find_give_receipt_pages() { 
-		ob_start();
+
+		$cache_key = 'pfconfs_pages_w_shortcode';
 		
-		$args = array(
-			's' => 'give_receipt',
-			'post_type' => 'page'
+		if ( ! $results = get_transient( $cache_key ) ) {
+			ob_start();
+			
+			$args = array(
+				's' => '[give_receipt]',
+				'post_type' => 'page',
+				'post_status'            => 'publish',
+				'update_post_term_cache' => false,
+				'update_post_meta_cache' => false,
+				'cache_results'          => false
 			);
-		 
-		$the_query = new WP_Query( $args );
-		 
-		wp_reset_postdata();
-		return $the_query;
+			
+			$the_query = new WP_Query( $args );
+
+			$results = $the_query->posts;
+
+			set_transient( $cache_key, $results, 24 * HOUR_IN_SECONDS );
 		}
-	
+		
+		wp_reset_postdata();
+		return $results;
+		
+	}
 }
 new PFCONFS4GiveWP_Form_Settings();

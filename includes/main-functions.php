@@ -62,3 +62,11 @@ function pfconfs4givewp_output_sharing_below( $donation, $give_receipt_args ) {
     pfconfs4givewp_output_sharing( $donation, $give_receipt_args, 'below' );
 
 }
+
+function pfconfs_delete_query_transient( $post ) {
+    // Deletes the transient when a new post is published
+    delete_transient( '_transient_pfconfs_pages_w_shortcode' );
+    delete_transient( '_pfconfs_pages_w_shortcode' );
+    delete_transient( 'pfconfs_pages_w_shortcode' );
+}
+add_action( 'transition_post_status', 'pfconfs_delete_query_transient' );
