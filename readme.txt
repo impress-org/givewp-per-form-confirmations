@@ -8,11 +8,11 @@ Stable tag: 1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
-A GiveWP add-on that let's you designate unique confirmation pages per form. Useful for multilingual sites or customizing your thank you messaging.
+A [GiveWP](https://givewp.com/?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) add-on that let's you designate unique confirmation pages per form. Useful for multilingual sites or customizing your thank you messaging.
 
 == Description ==
 
-"Per Form Confirmations for GiveWP" let's you designate unique confirmation pages per form in the GiveWP plugin. This let's you customize your "thank you" messaging per form. It is also very helpful for sites that use WPML to support multiple languages, since they have to designate a unique confirmation page per language, per form.
+"Per Form Confirmations for GiveWP" let's you designate unique confirmation pages per form in the [GiveWP](https://givewp.com/?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) plugin. This let's you customize your "thank you" messaging per form. It is also very helpful for sites that use WPML to support multiple languages, since they have to designate a unique confirmation page per language, per form.
 
 This has many potential use-cases. Here's a few ideas:
 
@@ -35,9 +35,9 @@ Once enabled, all you need to do is:
 4. You can additionally add content before or afer the receipt table. This is useful if you are sending multiple forms to the same page, but still want customized messaging. 
 
 **ABOUT GIVEWP**
-> GiveWP is the fundraising plugin of choice for WordPress. It has the most downloads, active installs, and 5-star ratings of any other donation plugin on wordpress.org. Whether you are running a small personal fundraiser or a large nonprofit, GiveWP provides you with flexible forms, donor management, visually compelling and insightful reports, and more. 
+> [GiveWP](https://givewp.com/?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) is the fundraising plugin of choice for WordPress. It has the most downloads, active installs, and 5-star ratings of any other donation plugin on wordpress.org. Whether you are running a small personal fundraiser or a large nonprofit, GiveWP provides you with flexible forms, donor management, visually compelling and insightful reports, and more. 
 > 
-> You can install GiveWP on your WordPress website today for free. Then make sure to check out our pricing plans to see all the ways you can take your fundraising to the next level. 
+> You can [install GiveWP](https://wordpress.org/plugin/give?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) on your WordPress website today for free. Then make sure to check out our pricing plans to see all the ways you can take your fundraising to the next level. 
 
 == Installation ==
 
