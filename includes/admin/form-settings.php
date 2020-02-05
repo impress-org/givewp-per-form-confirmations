@@ -34,7 +34,7 @@ class PFCONFS4GiveWP_Form_Settings {
 					'id'       => "{$this->id}_status",
 					'name'     => __( 'Enable', 'pfconfs-4-givewp' ),
 					'type'     => 'radio_inline',
-					'desc'     => __( 'Set whether this form uses the global PayPal Standard email address or a custom beneficiary\'s email address ', 'pfconfs-4-givewp' ),
+					'desc'     => __( 'Enable Per Form Confirmations by setting this to "Customize", or inherit the Global Success Page setting.', 'pfconfs-4-givewp' ),
 					'options' => array( 
                         'global' => __('Global', 'pfconfs-4-givewp'),
                         'customize' => __('Customize', 'pfconfs-4-givewp'),
@@ -88,10 +88,6 @@ class PFCONFS4GiveWP_Form_Settings {
 
 		$pagesquery = $this->give_find_give_receipt_pages();
 
-		$pages = $pagesquery;
-
-		//var_dump($pages);
-
 		?>
 		<p class="give-field-wrap <?php echo esc_attr( $field['id'] ); ?>_field <?php echo esc_attr( $field['wrapper_class'] ); ?>">
 		<label for="<?php echo esc_attr( give_get_field_name( $field ) ); ?>">
@@ -103,7 +99,7 @@ class PFCONFS4GiveWP_Form_Settings {
 				id="<?php echo esc_attr( $field['id'] ); ?>"
 		>
 			<?php
-			foreach ( $pages as $page ) { 
+			foreach ( $pagesquery as $page ) { 
 				$selected = ($field['value'] == $page->guid) ? 'selected' : '';
 				?>
 				<option <?php echo $selected; ?> value="<?php echo $page->guid; ?>">
@@ -112,7 +108,7 @@ class PFCONFS4GiveWP_Form_Settings {
 			?>
 		</select>
 		<br />
-		<span class="pfconfs-notice give-notice notice warning notice-warning"><strong>NOTE:</strong> This select field is only populated by pages that already have the <code>[give_receipt]</code> shortcode on them. If you do not see the page that you want to target for this form, go to "Pages" and add the <code>[give_receipt]</code> shortcode to that page first.</span>
+		<span class="pfconfs-notice give-notice notice warning notice-warning"><?php __('<strong>NOTE:</strong> This select field is only populated by pages that already have the <code>[give_receipt]</code> shortcode on them. If you do not see the page that you want to target for this form, go to "Pages" and add the <code>[give_receipt]</code> shortcode to that page first.</span>', 'pfconfs-4-givewp'); ?>
 		<?php echo give_get_field_description( $field ); ?>
 	</p>
 
