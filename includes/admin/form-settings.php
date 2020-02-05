@@ -93,6 +93,7 @@ class PFCONFS4GiveWP_Form_Settings {
 		<label for="<?php echo esc_attr( give_get_field_name( $field ) ); ?>">
 			<?php echo wp_kses_post( $field['name'] ); ?>
 		</label>
+		<?php //var_dump($field['value']); ?>
 		<select
 				class="give-select-chosen give-chosen-settings"
 				name="<?php echo esc_attr( give_get_field_name( $field ) ); ?>"
@@ -100,16 +101,17 @@ class PFCONFS4GiveWP_Form_Settings {
 		>
 			<?php
 			foreach ( $pagesquery as $page ) { 
-				$selected = ($field['value'] == $page->guid) ? 'selected' : '';
+				$selected = ($field['value'] == $page->ID) ? 'selected' : '';
 				?>
-				<option <?php echo $selected; ?> value="<?php echo $page->guid; ?>">
+				<option <?php echo $selected; ?> value="<?php echo $page->ID; ?>">
 					<?php echo $page->post_title;?>
 				</option><?php } ?>
 			?>
 		</select>
-		<br />
-		<span class="pfconfs-notice give-notice notice warning notice-warning"><?php __('<strong>NOTE:</strong> This select field is only populated by pages that already have the <code>[give_receipt]</code> shortcode on them. If you do not see the page that you want to target for this form, go to "Pages" and add the <code>[give_receipt]</code> shortcode to that page first.</span>', 'pfconfs-4-givewp'); ?>
 		<?php echo give_get_field_description( $field ); ?>
+		<br />
+		<span class="pfconfs-notice give-notice notice warning notice-warning"><?php _e('<strong>NOTE:</strong> This select field is only populated by pages that already have the <code>[give_receipt]</code> shortcode on them. If you do not see the page that you want to target for this form, go to "Pages" and add the <code>[give_receipt]</code> shortcode to that page first.</span>', 'pfconfs-4-givewp'); ?>
+		
 	</p>
 
 		<?php 
