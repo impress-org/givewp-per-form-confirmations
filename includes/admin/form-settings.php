@@ -95,7 +95,7 @@ class PFCONFS4GiveWP_Form_Settings {
 		</label>
 		<?php //var_dump($field['value']); ?>
 		<select
-				class="give-select-chosen give-chosen-settings"
+				class="give-select give-settings"
 				name="<?php echo esc_attr( give_get_field_name( $field ) ); ?>"
 				id="<?php echo esc_attr( $field['id'] ); ?>"
 		>
@@ -111,7 +111,6 @@ class PFCONFS4GiveWP_Form_Settings {
 		<?php echo give_get_field_description( $field ); ?>
 		<br />
 		<span class="pfconfs-notice give-notice notice warning notice-warning"><?php _e('<strong>NOTE:</strong> This select field is only populated by pages that already have the <code>[give_receipt]</code> shortcode on them. If you do not see the page that you want to target for this form, go to "Pages" and add the <code>[give_receipt]</code> shortcode to that page first.</span>', 'pfconfs-4-givewp'); ?>
-		
 	</p>
 
 		<?php 
@@ -128,6 +127,7 @@ class PFCONFS4GiveWP_Form_Settings {
 				's' => '[give_receipt]',
 				'post_type' => 'page',
 				'post_status'            => 'publish',
+				'posts_per_page'		 => apply_filters('pfc4g_receipt_page_query_number',30),
 				'update_post_term_cache' => false,
 				'update_post_meta_cache' => false,
 				'cache_results'          => false

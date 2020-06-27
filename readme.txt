@@ -3,22 +3,24 @@ Contributors: givewp, webdevmattcrom
 Donate link: https://givewp.com
 Tags: givewp, donation, donations, receipt, fundraising, multilingual, wpml
 Requires at least: 5.0
-Tested up to: 5.3
-Stable tag: 1.0
+Tested up to: 5.4
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
-A [GiveWP](https://givewp.com/?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) add-on that let's you designate unique confirmation pages per form. Useful for multilingual sites or customizing your thank you messaging.
+A [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs) add-on that let's you designate unique confirmation pages per form. Useful for multilingual sites or customizing your thank you messaging.
 
 == Description ==
 
-"Per Form Confirmations for GiveWP" let's you designate unique confirmation pages per form in the [GiveWP](https://givewp.com/?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) plugin. This let's you customize your "thank you" messaging per form. It is also very helpful for sites that use WPML to support multiple languages, since they have to designate a unique confirmation page per language, per form.
+"Per Form Confirmations for GiveWP" let's you designate unique confirmation pages per form in the [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs) plugin. This let's you customize your "thank you" messaging per form. It is also very helpful for sites that use WPML to support multiple languages, since they have to designate a unique confirmation page per language, per form.
 
 This has many potential use-cases. Here's a few ideas:
 
 * Customize the look/feel of a thank you page to match the form your donors come from
 * Add unique custo messaging above or below your receipt table on a per form basis.
 * Helpful for sites using WPML to support multiple languages since they have to designate a unique confirmation page per language per form. 
+
+[Learn more about this free add-on and all the free GiveWP add-ons we are creating in 2020 here](https://givewp.com/february-free-add-on-per-form-confirmations/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs).
 
 **FEATURES**
 
@@ -35,7 +37,7 @@ Once enabled, all you need to do is:
 4. You can additionally add content before or afer the receipt table. This is useful if you are sending multiple forms to the same page, but still want customized messaging. 
 
 **ABOUT GIVEWP**
-> [GiveWP](https://givewp.com/?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) is the fundraising plugin of choice for WordPress. It has the most downloads, active installs, and 5-star ratings of any other donation plugin on wordpress.org. Whether you are running a small personal fundraiser or a large nonprofit, GiveWP provides you with flexible forms, donor management, visually compelling and insightful reports, and more. 
+> [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs) is the fundraising plugin of choice for WordPress. It has the most downloads, active installs, and 5-star ratings of any other donation plugin on wordpress.org. Whether you are running a small personal fundraiser or a large nonprofit, GiveWP provides you with flexible forms, donor management, visually compelling and insightful reports, and more. 
 > 
 > You can [install GiveWP](https://wordpress.org/plugin/give?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) on your WordPress website today for free. Then make sure to check out our pricing plans to see all the ways you can take your fundraising to the next level. 
 
@@ -72,15 +74,35 @@ Currently the add-on only looks for Pages (not Posts or other post types) that a
 
 The dropdown in the form settings is populated *ONLY* with Pages that already have the `[give_receipt]` shortcode in them. So go add that to your page, and come back to the Form, refresh the page, and try again. 
 
-= My page has the `[give_receipt]` shortcode but it STILL does not show up in the select list. What do I do? = 
+= I have A LOT of donation confirmation pages, but only the first 30 appear. What do I do? = 
 
-Most likely you have A LOT of pages with the shortcode it in, but you're only seeing the first 30 in the dropdown. Never fear, just use the search bar within the dropdown to search for your page. 
+I chose "30" for performance reasons and because most folks don't need more than that. But if you do, then you can add this filter to your site to add as many as you need:
 
-If that doesn't work, then it might be that your Pages search result is cached. For performance reasons, the query that grabs all the Pages with the shortcode in them is cached via a "transient". To get the latest results you need to delete that transient. The easiest way to do that is to install the free "Transients Manager" by Pippin Williamson. Then navigate to "Tools > Transients", and in the search bar search for: "pfconfs_pages_w_shortcode". Once you find that transient, delete it. Then head back to your form and all your most current pages with the shortcode should be listed correctly.
+`add_filter('pfc4g_receipt_page_query_number', 'my_query_number');
+
+function my_query_number() {
+	$query = 50;
+
+	return $query;
+}`
+
+Just update the `$query = 50;` to be whatever number you like. 
+
+Then, keep in mind that the page query results are stored in a "transient". If you need to see immediate results, then I recommend you install the "Transient Manager" addon. The navigate to "Tools > Transients", then in the search field, search for "pfconfs" and delete that transient. Then your results will show all 50 results in the dropdown. 
+
+If you need assitance adding custom PHP snippets to your website, [check out our tutorial here](https://givewp.com/documentation/resources/adding-custom-functions-to-your-wordpress-website/).
 
 = I have a feature request, or would like to contribute to this plugin. Where can I do that? =
 
 Per Form Confirmations is hosted publicly on Github. We welcome your feedback and suggestions [there](https://github.com/impress-org/givewp-per-form-confirmations/issues).
+
+= Where can I submit Support Questions? =
+
+If you have purchased any of our Premium Add-ons, we can provide with your [Priority Support here](https://givewp.com/support?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs).
+
+If you are a free GiveWP user and have a general question about GiveWP, [submit a ticket here](https://wordpress.org/support/plugin/give/).
+
+Otherwise, if your question is specific to "Per Form Confirmations for GiveWP," we're happy to answer your questions [here](https://wordpress.org/support/plugin/per-form-confirmation-pages-for-givewp/).
 
 == Screenshots ==
 
@@ -88,6 +110,8 @@ Per Form Confirmations is hosted publicly on Github. We welcome your feedback an
 2. An example custom confirmation page with the custom message shown "above" the receipt table.
 
 == Changelog ==
+= 1.1 =
+* Fix: Ensure more than 9 page results appear in the "Page" option (issue# 9)[]
 
 = 1.0 =
 Initial release, launched with the following:
