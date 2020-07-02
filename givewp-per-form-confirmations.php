@@ -325,7 +325,7 @@ final class Per_Form_Confirmations_4_GIVEWP {
 	 * @access private
 	 */
 	public function load_admin_styles() {
-        wp_enqueue_style( 'pfconfs4givewp', PER_FORM_CONFIRMATIONS_4_GIVEWP_URL . 'assets/pfconfs4givewp-admin.css', array(), PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION, 'all' );
+        wp_enqueue_style( 'pfconfs4givewp', PER_FORM_CONFIRMATIONS_4_GIVEWP_URL . '/assets/pfconfs4givewp-admin.css', array(), PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION, 'all' );
 	}
 
 	/**

@@ -31,7 +31,13 @@ class PFCONFS4GiveWP_Form_Settings {
 			'icon-html' => '<span class="dashicons dashicons-text-page"></span>',
 			'fields'    => array(
 				array(
-					'id'       => "{$this->id}_status",
+					'id'	   => "{$this->id}_disabled",
+					'name'	   => '',
+					'type'     => 'disabled_for_non_legacy_templates_html',
+					'callback' => array($this,'disabled_for_non_legacy_templates_html'),
+				),
+				array(
+					'id'       => "legacy_only {$this->id}_status",
 					'name'     => __( 'Enable', 'pfconfs-4-givewp' ),
 					'type'     => 'radio_inline',
 					'desc'     => __( 'Enable Per Form Confirmations by setting this to "Customize", or inherit the Global Success Page setting.', 'pfconfs-4-givewp' ),
@@ -42,14 +48,14 @@ class PFCONFS4GiveWP_Form_Settings {
                      'default' => 'global',
 				),
 				array(
-					'id'       => "{$this->id}_page_url",
+					'id'       => "legacy_only {$this->id}_page_url",
 					'name'     => __( 'Page', 'pfconfs-4-givewp' ),
 					'type'     => 'give_custom_pages_output',
 					'callback' => array($this, 'give_custom_pages_output'),
 					'desc'     => __( 'Choose the Page your Confirmation message is on.', 'pfconfs-4-givewp' ),
 				),
 				array(
-					'id'       => "{$this->id}_message_location",
+					'id'       => "legacy_only {$this->id}_message_location",
 					'name'     => __( 'Message Location', 'pfconfs-4-givewp' ),
 					'type'     => 'radio_inline',
 					'desc'     => __( 'Set the position of the custom messaging or disable it completely.', 'pfconfs-4-givewp' ),
@@ -61,7 +67,7 @@ class PFCONFS4GiveWP_Form_Settings {
                      'default' => 'disabled',
 				),
 				array(
-					'id'       => "{$this->id}_confirmation_message",
+					'id'       => "legacy_only {$this->id}_confirmation_message",
 					'name'     => __( 'Message', 'pfconfs-4-givewp' ),
 					'type'     => 'wysiwyg',
 				),
@@ -143,6 +149,16 @@ class PFCONFS4GiveWP_Form_Settings {
 		wp_reset_postdata();
 		return $results;
 		
+	}
+
+	public function disabled_for_non_legacy_templates_html() {
+		ob_start(); ?>
+			<p class="pfconfs-disabled"><?php _e('Per Form Confirmations is not relevant for non-Legacy Form Templates. If you want to use Per Form Confirmations, then change your Form Template to the "Legacy" option.', 'pfconfs-4-givewp'); ?></p>
+		<?php 
+
+		$html = ob_get_contents();
+
+		return $html;
 	}
 }
 new PFCONFS4GiveWP_Form_Settings();

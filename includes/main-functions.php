@@ -70,4 +70,5 @@ function pfconfs_delete_query_transient( $post ) {
     delete_transient( '_pfconfs_pages_w_shortcode' );
     delete_transient( 'pfconfs_pages_w_shortcode' );
 }
+
 add_action( 'transition_post_status', 'pfconfs_delete_query_transient' );
