@@ -92,6 +92,12 @@ Then, keep in mind that the page query results are stored in a "transient". If y
 
 If you need assitance adding custom PHP snippets to your website, [check out our tutorial here](https://givewp.com/documentation/resources/adding-custom-functions-to-your-wordpress-website/).
 
+= How can I use this with the new GiveWP Form Templates? =
+
+The new form templates feature made this add-on obsolete, except for the Legacy form style. That's why you'll now see a notice on the Confirmation form settings if you have a non-Legacy form template activated. 
+
+The only way to use this correctly with GiveWP 2.7 and higher is to have your form use the Legacy form style. 
+
 = I have a feature request, or would like to contribute to this plugin. Where can I do that? =
 
 Per Form Confirmations is hosted publicly on Github. We welcome your feedback and suggestions [there](https://github.com/impress-org/givewp-per-form-confirmations/issues).
@@ -111,7 +117,8 @@ Otherwise, if your question is specific to "Per Form Confirmations for GiveWP," 
 
 == Changelog ==
 = 1.1 =
-* Fix: Ensure more than 9 page results appear in the "Page" option (issue# 9)[]
+* Fix: Ensure more than 9 page results appear in the "Page" option -- (issue# 9)[https://github.com/impress-org/givewp-per-form-confirmations/issues/9]
+* Tweak: Improve compatibility with GiveWP 2.7 by showing an alert that this add-on is only relevant for Legacy form templates -- (issue# 10)[https://github.com/impress-org/givewp-per-form-confirmations/issues/10]
 
 = 1.0 =
 Initial release, launched with the following:
