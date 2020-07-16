@@ -117,11 +117,11 @@ Otherwise, if your question is specific to "Per Form Confirmations for GiveWP," 
 
 == Changelog ==
 = 1.1.1 =
-* Hotfix to address a problem introduced with the form settings names preventing form settings from saving correctly. -- (issue #11)[https://github.com/impress-org/givewp-per-form-confirmations/issues/11]
+* Hotfix to address a problem introduced with the form settings names preventing form settings from saving correctly. -- [issue #11](https://github.com/impress-org/givewp-per-form-confirmations/issues/11)
 
 = 1.1 =
-* Fix: Ensure more than 9 page results appear in the "Page" option -- (issue# 9)[https://github.com/impress-org/givewp-per-form-confirmations/issues/9]
-* Tweak: Improve compatibility with GiveWP 2.7 by showing an alert that this add-on is only relevant for Legacy form templates -- (issue# 10)[https://github.com/impress-org/givewp-per-form-confirmations/issues/10]
+* Fix: Ensure more than 9 page results appear in the "Page" option -- [issue# 9](https://github.com/impress-org/givewp-per-form-confirmations/issues/9)
+* Tweak: Improve compatibility with GiveWP 2.7 by showing an alert that this add-on is only relevant for Legacy form templates -- [issue# 10](https://github.com/impress-org/givewp-per-form-confirmations/issues/10)
 
 = 1.0 =
 Initial release, launched with the following:
