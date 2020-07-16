@@ -3,7 +3,7 @@
  * Plugin Name: Per-Form Confirmation Pages for GiveWP
  * Plugin URI:  https://github.com/impress-org/givewp-per-form-confirmations
  * Description: Set a unique donation confirmation page per-form for GiveWP
- * Version:     1.1
+ * Version:     1.1.1
  * Author:      GiveWP
  * Author URI:  https://givewp.com
  * License:     GNU General Public License v2 or later
@@ -95,7 +95,7 @@ final class Per_Form_Confirmations_4_GIVEWP {
 
 		// Defines addon version number for easy reference.
 		if ( ! defined( 'PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION' ) ) {
-			define( 'PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION', '1.1' );
+			define( 'PER_FORM_CONFIRMATIONS_4_GIVEWP_VERSION', '1.1.1' );
 		}
 
 		// Set it to latest.

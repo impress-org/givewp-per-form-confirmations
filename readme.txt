@@ -4,7 +4,7 @@ Donate link: https://givewp.com
 Tags: givewp, donation, donations, receipt, fundraising, multilingual, wpml
 Requires at least: 5.0
 Tested up to: 5.4
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -116,6 +116,9 @@ Otherwise, if your question is specific to "Per Form Confirmations for GiveWP," 
 2. An example custom confirmation page with the custom message shown "above" the receipt table.
 
 == Changelog ==
+= 1.1.1 =
+* Hotfix to address a problem introduced with the form settings names preventing form settings from saving correctly. -- (issue #11)[https://github.com/impress-org/givewp-per-form-confirmations/issues/11]
+
 = 1.1 =
 * Fix: Ensure more than 9 page results appear in the "Page" option -- (issue# 9)[https://github.com/impress-org/givewp-per-form-confirmations/issues/9]
 * Tweak: Improve compatibility with GiveWP 2.7 by showing an alert that this add-on is only relevant for Legacy form templates -- (issue# 10)[https://github.com/impress-org/givewp-per-form-confirmations/issues/10]

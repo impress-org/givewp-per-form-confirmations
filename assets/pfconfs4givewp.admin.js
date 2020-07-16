@@ -3,6 +3,11 @@ jQuery(document).ready(function($) {
     var message_location = $('.pfconfs4givewp-fields_message_location_field');
     var template = $('input#_give_form_template');
 
+    var fieldset_enable = $('.pfconfs4givewp-fields_status_field');
+    var fieldset_page = $('.pfconfs4givewp-fields_page_url_field');
+    var fieldset_message_location = $('.pfconfs4givewp-fields_message_location_field');
+    var fieldset_message = $('.pfconfs4givewp-fields_confirmation_message_field');
+
     price_option.on( 'change', function() {
 
         var price_option_val = $( '.pfconfs4givewp-fields_status_field input:radio:checked' ).val();
@@ -38,22 +43,22 @@ jQuery(document).ready(function($) {
 
     if ( template.val() == 'legacy') {
         $('.pfconfs-disabled').hide();
-        $('.legacy_only').show();
+        $(fieldset_enable.add(fieldset_page).add(fieldset_message_location).add(fieldset_message).show());
     } 
     if ( template.val() != 'legacy') {
         $('.pfconfs-disabled').show();
-        $('.legacy_only').hide();
+        $(fieldset_enable.add(fieldset_page).add(fieldset_message_location).add(fieldset_message).hide());
     }  
 
     $( '#form_template_options' ).on( 'click', '.js-template--activate', function( ev ) {
         //ev.preventDefault();
         if ( template.val() != 'legacy') {
             $('.pfconfs-disabled').show();
-            $('.legacy_only').hide();
+            $(fieldset_enable.add(fieldset_page).add(fieldset_message_location).add(fieldset_message).hide());
         }
         if ( template.val() == 'legacy') {
             $('.pfconfs-disabled').hide();
-            $('.legacy_only').show();
+            $(fieldset_enable.add(fieldset_page).add(fieldset_message_location).add(fieldset_message).show());
         }
     });
 });
