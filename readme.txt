@@ -3,7 +3,7 @@ Contributors: givewp, webdevmattcrom
 Donate link: https://givewp.com
 Tags: givewp, donation, donations, receipt, fundraising, multilingual, wpml
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.7
 Stable tag: 1.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
@@ -18,28 +18,28 @@ This has many potential use-cases. Here's a few ideas:
 
 * Customize the look/feel of a thank you page to match the form your donors come from
 * Add unique custo messaging above or below your receipt table on a per form basis.
-* Helpful for sites using WPML to support multiple languages since they have to designate a unique confirmation page per language per form. 
+* Helpful for sites using WPML to support multiple languages since they have to designate a unique confirmation page per language per form.
 
 [Learn more about this free add-on and all the free GiveWP add-ons we are creating in 2020 here](https://givewp.com/february-free-add-on-per-form-confirmations/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs).
 
 **FEATURES**
 
-* No global settings, only per-form settings 
-* Easy select dropdown of your existing page that have the `[give_receipt]` shortcode on them. 
+* No global settings, only per-form settings
+* Easy select dropdown of your existing page that have the `[give_receipt]` shortcode on them.
 * BONUS: Add custom messaging above or below your receipt table
 
 **BASIC USAGE**
 
 Once enabled, all you need to do is:
-1. Add a new confirmation page and include the `[give_receipt]` shortcode in it. 
-2. Go to edit your form and navigate to the "Confirmation" tab. 
-3. Choose your new confirmation page 
-4. You can additionally add content before or afer the receipt table. This is useful if you are sending multiple forms to the same page, but still want customized messaging. 
+1. Add a new confirmation page and include the `[give_receipt]` shortcode in it.
+2. Go to edit your form and navigate to the "Confirmation" tab.
+3. Choose your new confirmation page
+4. You can additionally add content before or afer the receipt table. This is useful if you are sending multiple forms to the same page, but still want customized messaging.
 
 **ABOUT GIVEWP**
-> [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs) is the fundraising plugin of choice for WordPress. It has the most downloads, active installs, and 5-star ratings of any other donation plugin on wordpress.org. Whether you are running a small personal fundraiser or a large nonprofit, GiveWP provides you with flexible forms, donor management, visually compelling and insightful reports, and more. 
-> 
-> You can [install GiveWP](https://wordpress.org/plugin/give?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) on your WordPress website today for free. Then make sure to check out our pricing plans to see all the ways you can take your fundraising to the next level. 
+> [GiveWP](https://givewp.com/?utm_source=wordpress.org&utm_medium=referral&utm_campaign=Free_Addons&utm_content=pfconfs) is the fundraising plugin of choice for WordPress. It has the most downloads, active installs, and 5-star ratings of any other donation plugin on wordpress.org. Whether you are running a small personal fundraiser or a large nonprofit, GiveWP provides you with flexible forms, donor management, visually compelling and insightful reports, and more.
+>
+> You can [install GiveWP](https://wordpress.org/plugin/give?utm_source=wp-org&utm_medium=pfconfs&utm_campaign=readme) on your WordPress website today for free. Then make sure to check out our pricing plans to see all the ways you can take your fundraising to the next level.
 
 == Installation ==
 
@@ -72,9 +72,9 @@ Currently the add-on only looks for Pages (not Posts or other post types) that a
 
 = I can't find the Page I want to point my form to =
 
-The dropdown in the form settings is populated *ONLY* with Pages that already have the `[give_receipt]` shortcode in them. So go add that to your page, and come back to the Form, refresh the page, and try again. 
+The dropdown in the form settings is populated *ONLY* with Pages that already have the `[give_receipt]` shortcode in them. So go add that to your page, and come back to the Form, refresh the page, and try again.
 
-= I have A LOT of donation confirmation pages, but only the first 30 appear. What do I do? = 
+= I have A LOT of donation confirmation pages, but only the first 30 appear. What do I do? =
 
 I chose "30" for performance reasons and because most folks don't need more than that. But if you do, then you can add this filter to your site to add as many as you need:
 
@@ -86,17 +86,17 @@ function my_query_number() {
 	return $query;
 }`
 
-Just update the `$query = 50;` to be whatever number you like. 
+Just update the `$query = 50;` to be whatever number you like.
 
-Then, keep in mind that the page query results are stored in a "transient". If you need to see immediate results, then I recommend you install the "Transient Manager" addon. The navigate to "Tools > Transients", then in the search field, search for "pfconfs" and delete that transient. Then your results will show all 50 results in the dropdown. 
+Then, keep in mind that the page query results are stored in a "transient". If you need to see immediate results, then I recommend you install the "Transient Manager" addon. The navigate to "Tools > Transients", then in the search field, search for "pfconfs" and delete that transient. Then your results will show all 50 results in the dropdown.
 
 If you need assitance adding custom PHP snippets to your website, [check out our tutorial here](https://givewp.com/documentation/resources/adding-custom-functions-to-your-wordpress-website/).
 
 = How can I use this with the new GiveWP Form Templates? =
 
-The new form templates feature made this add-on obsolete, except for the Legacy form style. That's why you'll now see a notice on the Confirmation form settings if you have a non-Legacy form template activated. 
+The new form templates feature made this add-on obsolete, except for the Legacy form style. That's why you'll now see a notice on the Confirmation form settings if you have a non-Legacy form template activated.
 
-The only way to use this correctly with GiveWP 2.7 and higher is to have your form use the Legacy form style. 
+The only way to use this correctly with GiveWP 2.7 and higher is to have your form use the Legacy form style.
 
 = I have a feature request, or would like to contribute to this plugin. Where can I do that? =
 
@@ -125,8 +125,8 @@ Otherwise, if your question is specific to "Per Form Confirmations for GiveWP," 
 
 = 1.0 =
 Initial release, launched with the following:
-* Form settings to choose a custom confirmation page 
-* Form setting to add a custom message above or below the receipt table 
+* Form settings to choose a custom confirmation page
+* Form setting to add a custom message above or below the receipt table
 * Internationalization
 * Dropdown query is cached for performance.
 
